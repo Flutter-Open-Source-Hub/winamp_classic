@@ -20,19 +20,11 @@ class UISlider extends StatelessWidget {
   Widget build(BuildContext context) {
     final slider = SliderTheme(
       data: Theme.of(context).sliderTheme,
-      child: Slider(
-        value: value,
-        onChanged: onChanged,
-        min: min,
-        max: max,
-      ),
+      child: Slider(value: value, onChanged: onChanged, min: min, max: max),
     );
 
     if (vertical) {
-      return RotatedBox(
-        quarterTurns: 3,
-        child: slider,
-      );
+      return RotatedBox(quarterTurns: 3, child: slider);
     }
     return slider;
   }
