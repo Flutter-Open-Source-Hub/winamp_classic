@@ -17,6 +17,8 @@ dependencies:
   flutter_bloc: ^9.1.1
   mobx: ^2.5.0
   flutter_mobx: ^2.3.0
+  dart_openai: ^5.1.0
+  envied: ^1.2.0
 
 dev_dependencies:
   flutter_test:
