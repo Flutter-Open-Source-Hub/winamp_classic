@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'ui/chat_with_bot_page.dart';
 import 'ui/colors.dart';
-import 'ui/slider_view_model.dart';
+import 'ui/filled_button.dart';
 import 'ui/slider.dart';
 import 'ui/slider_bloc.dart';
+import 'ui/slider_view_model.dart';
 import 'ui/theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -68,9 +72,19 @@ class _HomeScreenState extends State<HomeScreen> {
             borderRadius: BorderRadius.circular(4),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               children: [
+                UIFilledButton(
+                  text: 'ChatBot area',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ChatWithBot(),
+                      ),
+                    );
+                  },
+                ),
                 // Digital Display Area
                 Container(
                   padding: const EdgeInsets.all(8),
